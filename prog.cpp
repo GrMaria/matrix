@@ -1,5 +1,7 @@
-#include <iostream>
+п»ї#include <iostream>
 using namespace std;
+
+#define URL "pastebin.com/iLBmKdyH"
 
 class Matrix
 {
@@ -23,7 +25,7 @@ public:
 	virtual float get(int i, int j);
 	virtual int getN();
 	virtual int getM();
-	virtual bool failed();//убрала, что метод =0
+	virtual bool failed();
 };
 
 Matrix::Matrix()
@@ -48,7 +50,7 @@ Matrix::Matrix(int m, int n)
 
 Matrix Matrix::operator+(Matrix& a)
 {
-	if (failed){return *this;}
+	if (failed()){ return *this; }
 	if (this->n == a.getN() && this->m == a.getM())
 	{
 		for (int i = 0; i < n; i++)
@@ -64,7 +66,7 @@ Matrix Matrix::operator+(Matrix& a)
 
 Matrix Matrix::operator*(Matrix& a)
 {
-	if (failed){return *this;}
+	if (failed()){ return *this; }
 	Matrix tmp2 = Matrix(this->getN(), a.getM());
 	if (this->getM() == a.getN())
 	{
@@ -85,7 +87,7 @@ Matrix Matrix::operator*(Matrix& a)
 
 Matrix Matrix::operator*(float& num)
 {
-	if (failed){return *this;}
+	if (failed()){ return *this; }
 	Matrix tmp = Matrix(this->n, this->m);
 	for (int i = 0; i < n*m; i++)
 	{
@@ -96,7 +98,7 @@ Matrix Matrix::operator*(float& num)
 
 Matrix Matrix::operator-(Matrix& a)
 {
-	if (failed){return *this;}
+	if (failed()){ return *this; }
 	Matrix tmp = Matrix(this->n, this->m);
 	if (tmp.n == a.getN() && tmp.m == a.getM())
 	{
@@ -110,54 +112,54 @@ Matrix Matrix::operator-(Matrix& a)
 
 Matrix Matrix::reverse()
 {
-	if (failed){return *this;}
+	if (failed()){ return *this; }
 	if (n == m)
 	{
-		if (n == 1) {return *this;}
+		if (n == 1) { return *this; }
 
 		if (n == 2)
 		{
 			float det = this->determinant();
 			this->data[0] = data[3] / det;
-			this->data[1] = -1*data[1] / det;
-			this->data[2] = -1*data[2] / det;
+			this->data[1] = -1 * data[1] / det;
+			this->data[2] = -1 * data[2] / det;
 			this->data[3] = data[0] / det;
 			return *this;
 		}
 
-		if(n > 2)
+		if (n > 2)
 		{
 			Matrix tmp1 = Matrix(n, n);
 			float det1 = this->determinant();
-			for (int l = 0; l < n; l++) //строки
+			for (int l = 0; l < n; l++) //СЃС‚СЂРѕРєРё
 			{
-				for (int k = 0; k < n; k++) //столбцы
+				for (int k = 0; k < n; k++) //СЃС‚РѕР»Р±С†С‹
 				{
 					Matrix tmp2 = Matrix((n - 1), (n - 1));
-					for (int i = 0; i < n-1; i++) //идёт по строкам
+					for (int i = 0; i < n - 1; i++) //РёРґС‘С‚ РїРѕ СЃС‚СЂРѕРєР°Рј
 					{
-						for (int j = 0; j < n-1; j++) //идёт по столбцам
+						for (int j = 0; j < n - 1; j++) //РёРґС‘С‚ РїРѕ СЃС‚РѕР»Р±С†Р°Рј
 						{
-							if (i < l && j < k) 
+							if (i < l && j < k)
 							{
-								tmp2.data[i*(n-1) + j] = data[i*n + j];
+								tmp2.data[i*(n - 1) + j] = data[i*n + j];
 							}
-							if (i < l && j >= k) 
+							if (i < l && j >= k)
 							{
-								tmp2.data[i*(n-1) + j] = data[i*n + (j+1)];
+								tmp2.data[i*(n - 1) + j] = data[i*n + (j + 1)];
 							}
-							if (i >= l && j < k) 
+							if (i >= l && j < k)
 							{
-								tmp2.data[i*(n-1) + j] = data[(i+1)*n + j];
+								tmp2.data[i*(n - 1) + j] = data[(i + 1)*n + j];
 							}
-							if (i >= l && j >= k) 
+							if (i >= l && j >= k)
 							{
-								tmp2.data[i*(n-1) + j] = data[(i+1)*n + (j+1)];
+								tmp2.data[i*(n - 1) + j] = data[(i + 1)*n + (j + 1)];
 							}
 						}
 
 					}
-					tmp1.data[l*n + k] = tmp2.determinant() * powf(-1, l+k) / abs(det1); //элементы матрицы алгебраических дополнений
+					tmp1.data[l*n + k] = tmp2.determinant() * powf(-1, l + k) / abs(det1); //СЌР»РµРјРµРЅС‚С‹ РјР°С‚СЂРёС†С‹ Р°Р»РіРµР±СЂР°РёС‡РµСЃРєРёС… РґРѕРїРѕР»РЅРµРЅРёР№
 				}
 			}
 			*this = tmp1.transpose();
@@ -165,17 +167,19 @@ Matrix Matrix::reverse()
 		}
 	}
 	else
-	{cout << "Error" << endl; return *this;}
+	{
+		cout << "Error" << endl; return *this;
+	}
 }
 
 
 Matrix Matrix::transpose()
 {
-	if (failed){return *this;}
+	if (failed()){ return *this; }
 	Matrix tmp = Matrix(this->m, this->n);
-	for(int i = 0; i < tmp.n; i++)
+	for (int i = 0; i < tmp.n; i++)
 	{
-		for(int j = 0; j < tmp.m; j++)
+		for (int j = 0; j < tmp.m; j++)
 		{
 			tmp.data[i*tmp.m + j] = this->data[j*this->m + i];
 		}
@@ -185,37 +189,41 @@ Matrix Matrix::transpose()
 
 float Matrix::determinant()
 {
-	if (failed){return 0;}
-	//разложение по последней строке
+	if (failed()){ return 0; }
+	//СЂР°Р·Р»РѕР¶РµРЅРёРµ РїРѕ РїРѕСЃР»РµРґРЅРµР№ СЃС‚СЂРѕРєРµ
 	float det = 0;
 	if (n == m)
 	{
 		if (n == 1)
-		{det = data[0];}
+		{
+			det = data[0];
+		}
 		else
 		{
 			if (n == 2)
-			{det = data[0]*data[3] - data[1]*data[2];}
+			{
+				det = data[0] * data[3] - data[1] * data[2];
+			}
 			else
 			{
 				for (int k = 0; k < n; k++)
 				{
 					Matrix tmp = Matrix((n - 1), (n - 1));
-					for (int i = 0; i < n - 1; i++) //идёт по строкам
+					for (int i = 0; i < n - 1; i++) //РёРґС‘С‚ РїРѕ СЃС‚СЂРѕРєР°Рј
 					{
-						for (int j = 0; j < n - 1; j++) //идёт по столбцам
+						for (int j = 0; j < n - 1; j++) //РёРґС‘С‚ РїРѕ СЃС‚РѕР»Р±С†Р°Рј
 						{
-							if (j < k) 
+							if (j < k)
 							{
 								tmp.data[i*tmp.m + j] = data[i*m + j];
 							}
-							if (j >= k) 
+							if (j >= k)
 							{
-								tmp.data[i*tmp.m + j] = data[i*m + (j+1)];
+								tmp.data[i*tmp.m + j] = data[i*m + (j + 1)];
 							}
 						}
 					}
-					det += powf(-1, (n*(n-1) + k-1))*data[n*(n-1) + k]*tmp.determinant();
+					det += powf(-1, (n*(n - 1) + k - 1))*data[n*(n - 1) + k] * tmp.determinant();
 				}
 
 			}
@@ -224,7 +232,8 @@ float Matrix::determinant()
 	}
 	else {
 		cout << "Error" << endl;
-		return 0;}
+		return 0;
+	}
 }
 
 ostream& Matrix::print(ostream& o)
@@ -271,20 +280,24 @@ int Matrix::getM() { return m; }
 
 bool Matrix::failed()
 {
-	if(n == 0 || m == 0)
-	{ return true; } 
+	if (n == 0 || m == 0)
+	{
+		return true;
+	}
 	return false;
 }
 
 Matrix* get_init(int n, int m)
 {
-	Matrix* a = new Matrix (n, m);
+	Matrix* a = new Matrix(n, m);
 
-	if(Matrix::failed)
+	if (n == 0 || m == 0)
 	{
 		return NULL;
-	} else {
+	}
+	else {
 		a->read(cin);
 		return a;
 	}
 }
+
