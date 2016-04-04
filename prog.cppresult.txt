@@ -1,0 +1,16 @@
+[==========] Running 7 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 7 tests from MatrixTest
+[ RUN      ] MatrixTest.GetNM
+cur.cpp:22: Failure
+Value of: m->getN()
+  Actual: 4
+Expected: 3
+cur.cpp:23: Failure
+Value of: m->getM()
+  Actual: 3
+Expected: 4
+[  FAILED  ] MatrixTest.GetNM
+[ RUN      ] MatrixTest.Reverse
+FAIL
+Segmentation fault. Program terminated!
