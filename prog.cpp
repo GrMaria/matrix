@@ -1,5 +1,5 @@
-﻿#include <iostream>
-﻿#include <math.h>
+#include <iostream>
+#include <math.h>
 using namespace std;
 
 #define URL "pastebin.com/iLBmKdyH"
@@ -301,4 +301,3 @@ Matrix* get_init(int n, int m)
 		return a;
 	}
 }
-
