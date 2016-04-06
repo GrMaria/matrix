@@ -17,12 +17,60 @@
 
 
 
+cur.cpp:62: Failure
+Value of: abs((int)((int)(i == j) - c.get(i,j))) < 0.001
+  Actual: false
+Expected: true
+cur.cpp:62: Failure
+Value of: abs((int)((int)(i == j) - c.get(i,j))) < 0.001
+  Actual: false
+Expected: true
+cur.cpp:62: Failure
+Value of: abs((int)((int)(i == j) - c.get(i,j))) < 0.001
+  Actual: false
+Expected: true
+cur.cpp:62: Failure
+Value of: abs((int)((int)(i == j) - c.get(i,j))) < 0.001
+  Actual: false
+Expected: true
+cur.cpp:62: Failure
+Value of: abs((int)((int)(i == j) - c.get(i,j))) < 0.001
+  Actual: false
+Expected: true
+[  FAILED  ] MatrixTest.Reverse
+[ RUN      ] MatrixTest.Transpose
 
--1 -0 0 -0 0 
--0 -1 -0 0 -0 
-0 -0 -1 -0 0 
--0 0 -0 -1 -0 
-0 -0 0 -0 -1 
 
+
+
+
+
+cur.cpp:80: Failure
+Value of: abs((int)(i+j - c.get(i,j))) < 0.001
+  Actual: false
+Expected: true
+cur.cpp:80: Failure
+Value of: abs((int)(i+j - c.get(i,j))) < 0.001
+  Actual: false
+Expected: true
+[  FAILED  ] MatrixTest.Transpose
+[ RUN      ] MatrixTest.SetGet
+
+
+
+
+
+
+cur.cpp:92: Failure
+Value of: abs((int)(i+j - m->get(j,i))) < 0.001
+  Actual: false
+Expected: true
+cur.cpp:92: Failure
+Value of: abs((int)(i+j - m->get(j,i))) < 0.001
+  Actual: false
+Expected: true
+[  FAILED  ] MatrixTest.SetGet
+[ RUN      ] MatrixTest.FailedM
+killall: not found
 FAIL
 Segmentation fault. Program terminated!
