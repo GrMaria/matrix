@@ -12,5 +12,12 @@ Value of: m->getM()
 Expected: 4
 [  FAILED  ] MatrixTest.GetNM
 [ RUN      ] MatrixTest.Reverse
+
+-1 -0 0 -0 0 
+-0 -1 -0 0 -0 
+0 -0 -1 -0 0 
+-0 0 -0 -1 -0 
+0 -0 0 -0 -1 
+
 FAIL
 Segmentation fault. Program terminated!
