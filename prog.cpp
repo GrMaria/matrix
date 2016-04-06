@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <math.h>
 using namespace std;
 
 #define URL "pastebin.com/iLBmKdyH"
@@ -159,7 +160,7 @@ Matrix Matrix::reverse()
 						}
 
 					}
-					tmp1.data[l*n + k] = tmp2.determinant() * powf(-1, l + k) / abs(det1); //элементы матрицы алгебраических дополнений
+					tmp1.data[l*n + k] = tmp2.determinant() * powf(-1, l + k) / fabs(det1); //элементы матрицы алгебраических дополнений
 				}
 			}
 			*this = tmp1.transpose();
@@ -290,14 +291,14 @@ bool Matrix::failed()
 Matrix* get_init(int n, int m)
 {
 	Matrix* a = new Matrix(n, m);
-
-	if (n == 0 || m == 0)
-	{
-		return NULL;
-	}
-	else {
-		a->read(cin);
-		return a;
-	}
+	return a;
+	//	if (n == 0 || m == 0)
+	//{
+	//		return NULL;
+	//}
+	//else {
+	//		a->read(cin);
+	//		return a;
+	//}
 }
 
