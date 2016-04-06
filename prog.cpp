@@ -275,8 +275,8 @@ float Matrix::get(int i, int j)
 	return data[i*m + j];
 }
 
-int Matrix::getN() { return n; }
-int Matrix::getM() { return m; }
+int Matrix::getN() { return m; }
+int Matrix::getM() { return n; }
 
 
 bool Matrix::failed()
