@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+﻿#include <math.h>
 using namespace std;
 
 #define URL "pastebin.com/iLBmKdyH"
@@ -159,7 +160,7 @@ Matrix Matrix::reverse()
 						}
 
 					}
-					tmp1.data[l*n + k] = tmp2.determinant() * powf(-1, l + k) / abs(det1); //элементы матрицы алгебраических дополнений
+					tmp1.data[l*n + k] = tmp2.determinant() * powf(-1, l + k) / fabs(det1); //элементы матрицы алгебраических дополнений
 				}
 			}
 			*this = tmp1.transpose();
