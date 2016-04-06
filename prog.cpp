@@ -13,6 +13,8 @@ protected:
 public:
 	Matrix();
 	Matrix(int m, int n);
+	Matrix(const Matrix&);
+	~Matrix();
 	virtual Matrix operator+(Matrix&);
 	virtual Matrix operator*(Matrix&);
 	virtual Matrix operator*(float&);
@@ -49,6 +51,21 @@ Matrix::Matrix(int m, int n)
 	}
 }
 
+Matrix::Matrix(const Matrix& a)
+{
+	n = a.n; m = a.m;
+	data = new float[n*m];
+	for (int i = 0; i < n*m; i++)
+	{
+		data[i] = a.data[i];
+	}
+}
+
+Matrix::~Matrix()
+{
+	delete data;
+}
+
 Matrix Matrix::operator+(Matrix& a)
 {
 	if (failed()){ return *this; }
@@ -83,7 +100,7 @@ Matrix Matrix::operator*(Matrix& a)
 			}
 		}
 	}
-	return tmp2;
+	return Matrix(tmp2);
 }
 
 Matrix Matrix::operator*(float& num)
@@ -108,30 +125,33 @@ Matrix Matrix::operator-(Matrix& a)
 			tmp.data[i] = this->data[i] - a.get(i, 0);
 		}
 	}
-	return tmp;
+	return Matrix(tmp);
 }
 
 Matrix Matrix::reverse()
 {
-	if (failed()){ return *this; }
+	if (failed()){ return Matrix(*this); }
 	if (n == m)
 	{
-		if (n == 1) { return *this; }
+		if (n == 1) { return Matrix(*this); }
 
 		if (n == 2)
 		{
 			float det = this->determinant();
+			if (det == 0) { return Matrix(*this); }
+			float tmp = data[0];
 			this->data[0] = data[3] / det;
 			this->data[1] = -1 * data[1] / det;
 			this->data[2] = -1 * data[2] / det;
-			this->data[3] = data[0] / det;
-			return *this;
+			this->data[3] = tmp / det;
+			return Matrix(*this);
 		}
 
 		if (n > 2)
 		{
 			Matrix tmp1 = Matrix(n, n);
 			float det1 = this->determinant();
+			if (det1 == 0) { return Matrix(*this); }
 			for (int l = 0; l < n; l++) //строки
 			{
 				for (int k = 0; k < n; k++) //столбцы
@@ -163,13 +183,13 @@ Matrix Matrix::reverse()
 					tmp1.data[l*n + k] = tmp2.determinant() * powf(-1, l + k) / fabs(det1); //элементы матрицы алгебраических дополнений
 				}
 			}
-			*this = tmp1.transpose();
-			return *this;
+			tmp1.transpose();
+			return Matrix(tmp1);
 		}
 	}
 	else
 	{
-		cout << "Error" << endl; return *this;
+		cout << "Error" << endl; return Matrix(*this);
 	}
 }
 
@@ -185,7 +205,7 @@ Matrix Matrix::transpose()
 			tmp.data[i*tmp.m + j] = this->data[j*this->m + i];
 		}
 	}
-	return tmp;
+	return Matrix(tmp);
 }
 
 float Matrix::determinant()
