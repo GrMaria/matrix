@@ -67,7 +67,7 @@ Matrix Matrix::operator+(Matrix& a)
 Matrix Matrix::operator*(Matrix& a)
 {
 	if (failed()){ return *this; }
-	Matrix tmp2 = Matrix(this->getN(), a.getM());
+	Matrix tmp2 = Matrix(this->n, a.m);
 	if (this->getM() == a.getN())
 	{
 		for (int i = 0; i < this->getN(); i++)
@@ -100,7 +100,7 @@ Matrix Matrix::operator-(Matrix& a)
 {
 	if (failed()){ return *this; }
 	Matrix tmp = Matrix(this->n, this->m);
-	if (tmp.n == a.getN() && tmp.m == a.getM())
+	if (tmp.n == a.getN() && tmp.m == a.m)
 	{
 		for (int i = 0; i < n*m; i++)
 		{
@@ -238,7 +238,7 @@ float Matrix::determinant()
 
 ostream& Matrix::print(ostream& o)
 {
-	for (int i = 0; i < this->getN(); i++)
+	for (int i = 0; i < this->n; i++)
 	{
 		o << endl;
 		for (int j = 0; j < this->getM(); j++)
@@ -252,7 +252,7 @@ ostream& Matrix::print(ostream& o)
 
 istream& Matrix::read(istream& o)
 {
-	for (int i = 0; i < this->getN(); i++)
+	for (int i = 0; i < this->n; i++)
 	{
 		for (int j = 0; j < this->getM(); j++)
 		{
@@ -274,8 +274,8 @@ float Matrix::get(int i, int j)
 	return data[i*m + j];
 }
 
-int Matrix::getN() { return n; }
-int Matrix::getM() { return m; }
+int Matrix::getN() { return n+1; }
+int Matrix::getM() { return m+1; }
 
 
 bool Matrix::failed()
