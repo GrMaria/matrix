@@ -1,5 +1,248 @@
-cur.cpp: In member function 'virtual void MatrixTest_Transpose_Test::TestBody()':
-cur.cpp:72:22: error: 'j' was not declared in this scope
-     for (int i = 0 ; j < 4; i ++)
-                      ^
-./check.sh: line 24: ./a.out: No such file or directory
+[==========] Running 7 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 7 tests from MatrixTest
+[ RUN      ] MatrixTest.GetNM
+
+
+
+
+
+
+[       OK ] MatrixTest.GetNM
+[ RUN      ] MatrixTest.Reverse
+
+
+
+
+
+
+
+cur.cpp:62: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(i == j)
+Which is: 1
+cur.cpp:62: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(i == j)
+Which is: 1
+cur.cpp:62: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(i == j)
+Which is: 1
+cur.cpp:62: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(i == j)
+Which is: 1
+cur.cpp:62: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(i == j)
+Which is: 1
+[  FAILED  ] MatrixTest.Reverse
+[ RUN      ] MatrixTest.Transpose
+
+
+
+
+
+
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 3
+Expected: (int)(cc++)
+Which is: 4
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 4
+Expected: (int)(cc++)
+Which is: 5
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 5
+Expected: (int)(cc++)
+Which is: 6
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 6
+Expected: (int)(cc++)
+Which is: 7
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 6
+Expected: (int)(cc++)
+Which is: 8
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 7
+Expected: (int)(cc++)
+Which is: 9
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 8
+Expected: (int)(cc++)
+Which is: 10
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 9
+Expected: (int)(cc++)
+Which is: 11
+[  FAILED  ] MatrixTest.Transpose
+[ RUN      ] MatrixTest.SetGet
+
+
+
+
+
+
+
+1 1 1 1 
+1 1 1 1 
+1 1 1 1 
+1 1 1 0 
+
+
+0 1 2 3 
+3 2 3 4 
+4 3 4 5 
+5 1 1 0 
+
+cur.cpp:94: Failure
+Value of: (int)(m->get(j,i)+0.5)
+  Actual: 3
+Expected: (int)(i+j)
+Which is: 1
+cur.cpp:94: Failure
+Value of: (int)(m->get(j,i)+0.5)
+  Actual: 4
+Expected: (int)(i+j)
+Which is: 2
+[  FAILED  ] MatrixTest.SetGet
+[ RUN      ] MatrixTest.FailedM
+[==========] Running 7 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 7 tests from MatrixTest
+[ RUN      ] MatrixTest.GetNM
+
+
+
+
+
+
+[       OK ] MatrixTest.GetNM
+[ RUN      ] MatrixTest.Reverse
+
+
+
+
+
+
+
+cur.cpp:62: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(i == j)
+Which is: 1
+cur.cpp:62: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(i == j)
+Which is: 1
+cur.cpp:62: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(i == j)
+Which is: 1
+cur.cpp:62: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(i == j)
+Which is: 1
+cur.cpp:62: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 0
+Expected: (int)(i == j)
+Which is: 1
+[  FAILED  ] MatrixTest.Reverse
+[ RUN      ] MatrixTest.Transpose
+
+
+
+
+
+
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 3
+Expected: (int)(cc++)
+Which is: 4
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 4
+Expected: (int)(cc++)
+Which is: 5
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 5
+Expected: (int)(cc++)
+Which is: 6
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 6
+Expected: (int)(cc++)
+Which is: 7
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 6
+Expected: (int)(cc++)
+Which is: 8
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 7
+Expected: (int)(cc++)
+Which is: 9
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 8
+Expected: (int)(cc++)
+Which is: 10
+cur.cpp:82: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 9
+Expected: (int)(cc++)
+Which is: 11
+[  FAILED  ] MatrixTest.Transpose
+[ RUN      ] MatrixTest.SetGet
+
+
+
+
+
+
+
+1 1 1 1 
+1 1 1 1 
+1 1 1 1 
+1 1 1 0 
+
+
+0 1 2 3 
+3 2 3 4 
+4 3 4 5 
+5 1 1 0 
+
+cur.cpp:94: Failure
+Value of: (int)(m->get(j,i)+0.5)
+  Actual: 3
+Expected: (int)(i+j)
+Which is: 1
+cur.cpp:94: Failure
+Value of: (int)(m->get(j,i)+0.5)
+  Actual: 4
+Expected: (int)(i+j)
+Which is: 2
+[  FAILED  ] MatrixTest.SetGet
+[ RUN      ] MatrixTest.FailedM
