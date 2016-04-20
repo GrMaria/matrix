@@ -8,7 +8,15 @@
 
 
 
-[       OK ] MatrixTest.GetNM
+cur.cpp:23: Failure
+Value of: m->getM()
+  Actual: 4
+Expected: 3
+cur.cpp:24: Failure
+Value of: m->getN()
+  Actual: 3
+Expected: 4
+[  FAILED  ] MatrixTest.GetNM
 [ RUN      ] MatrixTest.Reverse
 
 
@@ -17,31 +25,81 @@
 
 
 
-cur.cpp:62: Failure
+cur.cpp:38: Failure
 Value of: (int)(c.get(i,j)+0.5)
   Actual: 0
 Expected: (int)(i == j)
 Which is: 1
-cur.cpp:62: Failure
+cur.cpp:38: Failure
 Value of: (int)(c.get(i,j)+0.5)
   Actual: 0
 Expected: (int)(i == j)
 Which is: 1
-cur.cpp:62: Failure
+cur.cpp:38: Failure
 Value of: (int)(c.get(i,j)+0.5)
   Actual: 0
 Expected: (int)(i == j)
 Which is: 1
-cur.cpp:62: Failure
+cur.cpp:38: Failure
 Value of: (int)(c.get(i,j)+0.5)
   Actual: 0
 Expected: (int)(i == j)
 Which is: 1
-cur.cpp:62: Failure
+cur.cpp:38: Failure
 Value of: (int)(c.get(i,j)+0.5)
   Actual: 0
 Expected: (int)(i == j)
 Which is: 1
+
+
+
+
+
+
+
+1 1 1 1 
+2 1 1 1 
+3 2 1 1 
+4 3 2 1 
+
+
+-1 1 0 1 
+1 -2 1 0 
+0 1 -2 1 
+-0 0 1 -1 
+
+cur.cpp:50: Failure
+Value of: round(c.get(i,i)+0.5)
+  Actual: -1
+Expected: 1
+cur.cpp:50: Failure
+Value of: round(c.get(i,i)+0.5)
+  Actual: -1
+Expected: 1
+cur.cpp:53: Failure
+Value of: round(c.get(i+1,i))
+  Actual: 6.82326e+22
+Expected: -2
+cur.cpp:53: Failure
+Value of: round(c.get(i+1,i))
+  Actual: 1.09025e+27
+Expected: -2
+cur.cpp:53: Failure
+Value of: round(c.get(i+1,i))
+  Actual: 1
+Expected: -2
+cur.cpp:55: Failure
+Value of: round(c.get(i+2,i))
+  Actual: 3.56254e+21
+Expected: 1
+cur.cpp:55: Failure
+Value of: round(c.get(i+2,i))
+  Actual: 0
+Expected: 1
+cur.cpp:57: Failure
+Value of: round(c.get(3,0))
+  Actual: 7.21307e+22
+Expected: 0
 [  FAILED  ] MatrixTest.Reverse
 [ RUN      ] MatrixTest.Transpose
 
@@ -50,46 +108,16 @@ Which is: 1
 
 
 
-cur.cpp:82: Failure
-Value of: (int)(c.get(i,j)+0.5)
-  Actual: 3
-Expected: (int)(cc++)
-Which is: 4
-cur.cpp:82: Failure
-Value of: (int)(c.get(i,j)+0.5)
-  Actual: 4
-Expected: (int)(cc++)
-Which is: 5
-cur.cpp:82: Failure
-Value of: (int)(c.get(i,j)+0.5)
-  Actual: 5
-Expected: (int)(cc++)
-Which is: 6
-cur.cpp:82: Failure
-Value of: (int)(c.get(i,j)+0.5)
-  Actual: 6
-Expected: (int)(cc++)
-Which is: 7
-cur.cpp:82: Failure
-Value of: (int)(c.get(i,j)+0.5)
-  Actual: 6
-Expected: (int)(cc++)
-Which is: 8
-cur.cpp:82: Failure
-Value of: (int)(c.get(i,j)+0.5)
-  Actual: 7
-Expected: (int)(cc++)
-Which is: 9
-cur.cpp:82: Failure
-Value of: (int)(c.get(i,j)+0.5)
-  Actual: 8
-Expected: (int)(cc++)
-Which is: 10
-cur.cpp:82: Failure
+cur.cpp:76: Failure
 Value of: (int)(c.get(i,j)+0.5)
   Actual: 9
 Expected: (int)(cc++)
-Which is: 11
+Which is: 1
+cur.cpp:76: Failure
+Value of: (int)(c.get(i,j)+0.5)
+  Actual: 10
+Expected: (int)(cc++)
+Which is: 2
 [  FAILED  ] MatrixTest.Transpose
 [ RUN      ] MatrixTest.SetGet
 
@@ -98,27 +126,15 @@ Which is: 11
 
 
 
-
-1 1 1 1 
-1 1 1 1 
-1 1 1 1 
-1 1 1 0 
-
-
-0 1 2 3 
-3 2 3 4 
-4 3 4 5 
-5 1 1 0 
-
-cur.cpp:94: Failure
+cur.cpp:90: Failure
 Value of: (int)(m->get(j,i)+0.5)
-  Actual: 3
-Expected: (int)(i+j)
+  Actual: 9
+Expected: (int)(c++)
 Which is: 1
-cur.cpp:94: Failure
+cur.cpp:90: Failure
 Value of: (int)(m->get(j,i)+0.5)
-  Actual: 4
-Expected: (int)(i+j)
+  Actual: 10
+Expected: (int)(c++)
 Which is: 2
 [  FAILED  ] MatrixTest.SetGet
 [ RUN      ] MatrixTest.FailedM
