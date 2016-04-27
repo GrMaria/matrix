@@ -68,38 +68,46 @@ Which is: 1
 0 1 -2 1 
 -0 0 1 -1 
 
-cur.cpp:50: Failure
-Value of: round(c.get(i,i)+0.5)
+index: 0
+cur.cpp:52: Failure
+Value of: round(c.get(i,i))
   Actual: -1
 Expected: 1
-cur.cpp:50: Failure
-Value of: round(c.get(i,i)+0.5)
-  Actual: -1
+index: 1
+cur.cpp:52: Failure
+Value of: round(c.get(i,i))
+  Actual: 0
 Expected: 1
-cur.cpp:53: Failure
+index: 2
+cur.cpp:52: Failure
+Value of: round(c.get(i,i))
+  Actual: 7.09742e+22
+Expected: 1
+index: 3
+cur.cpp:52: Failure
+Value of: round(c.get(i,i))
+  Actual: 0
+Expected: 1
+cur.cpp:55: Failure
 Value of: round(c.get(i+1,i))
   Actual: 6.82326e+22
 Expected: -2
-cur.cpp:53: Failure
-Value of: round(c.get(i+1,i))
-  Actual: 1.09025e+27
-Expected: -2
-cur.cpp:53: Failure
-Value of: round(c.get(i+1,i))
-  Actual: 1
-Expected: -2
 cur.cpp:55: Failure
-Value of: round(c.get(i+2,i))
-  Actual: 3.56254e+21
-Expected: 1
-cur.cpp:55: Failure
-Value of: round(c.get(i+2,i))
+Value of: round(c.get(i+1,i))
   Actual: 0
+Expected: -2
+cur.cpp:55: Failure
+Value of: round(c.get(i+1,i))
+  Actual: 1.69308e+22
+Expected: -2
+cur.cpp:57: Failure
+Value of: round(c.get(i+2,i))
+  Actual: 3.09798e+32
 Expected: 1
 cur.cpp:57: Failure
-Value of: round(c.get(3,0))
-  Actual: 7.21307e+22
-Expected: 0
+Value of: round(c.get(i+2,i))
+  Actual: 7.09742e+22
+Expected: 1
 [  FAILED  ] MatrixTest.Reverse
 [ RUN      ] MatrixTest.Transpose
 
@@ -108,12 +116,12 @@ Expected: 0
 
 
 
-cur.cpp:76: Failure
+cur.cpp:78: Failure
 Value of: (int)(c.get(i,j)+0.5)
   Actual: 9
 Expected: (int)(cc++)
 Which is: 1
-cur.cpp:76: Failure
+cur.cpp:78: Failure
 Value of: (int)(c.get(i,j)+0.5)
   Actual: 10
 Expected: (int)(cc++)
@@ -126,12 +134,12 @@ Which is: 2
 
 
 
-cur.cpp:90: Failure
+cur.cpp:92: Failure
 Value of: (int)(m->get(j,i)+0.5)
   Actual: 9
 Expected: (int)(c++)
 Which is: 1
-cur.cpp:90: Failure
+cur.cpp:92: Failure
 Value of: (int)(m->get(j,i)+0.5)
   Actual: 10
 Expected: (int)(c++)
