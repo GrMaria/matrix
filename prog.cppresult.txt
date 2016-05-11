@@ -3,4 +3,7 @@ maria/prog.cpp: In member function 'Matrix& Matrix::operator=(const Matrix&)':
 maria/prog.cpp:78:37: error: invalid initialization of non-const reference of type 'Matrix&' from an rvalue of type 'Matrix'
    if (failed()){ return Matrix(*this); }
                                      ^
+maria/prog.cpp:86:22: error: invalid initialization of non-const reference of type 'Matrix&' from an rvalue of type 'Matrix'
+   return Matrix(*this);
+                      ^
 ./check.sh: line 24: ./a.out: No such file or directory
