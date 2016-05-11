@@ -72,7 +72,7 @@ public:
 		delete data;
 	}
 
-	/*
+	
 	Matrix operator= (Matrix& a)
 	{
 		if (failed()){ return Matrix(*this); }
@@ -84,7 +84,7 @@ public:
 			data[k] = a.data[k];
 		}
 		return (*this);
-	}*/
+	}
 
 	Matrix operator+ (Matrix& a)
 	{
@@ -210,7 +210,6 @@ public:
 							}
 
 						}
-						tmp2.print(cout); cout << tmp2.determinant() << endl;
 						tmp1.set(k, l, tmp2.determinant() * powf(-1, l + k + 1) / fabs(det1));//ýëåìåíòû ìàòðèöû àëãåáðàè÷åñêèõ äîïîëíåíèé
 					}
 				}
@@ -350,7 +349,7 @@ Matrix* get_init(int n, int m)
 		return a;
 	}
 }
-/*
+
 int main()
 {
 Matrix a = Matrix(3, 3);
@@ -361,4 +360,3 @@ a.print(cout);
 system("pause");
 return 0;
 }
-*/
