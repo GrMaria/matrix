@@ -339,15 +339,7 @@ public:
 Matrix* get_init(int n, int m)
 {
 	Matrix* a = new Matrix(n, m);
-
-	if (n == 0 || m == 0)
-	{
-		return NULL;
-	}
-	else {
-		a->read(cin);
-		return a;
-	}
+	return a;
 }
 /*
 int main()
