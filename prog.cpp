@@ -349,7 +349,7 @@ Matrix* get_init(int n, int m)
 		return a;
 	}
 }
-
+/*
 int main()
 {
 Matrix a = Matrix(3, 3);
@@ -360,4 +360,4 @@ a.print(cout);
 system("pause");
 return 0;
 }
-
+*/
