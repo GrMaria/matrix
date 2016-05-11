@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 
 #define URL "pastebin.com/iLBmKdyH"
@@ -31,8 +31,8 @@ public:
 	virtual bool failed();
 	*/
 
-	//m - ñòîëáû
-	//n - ñòğîêè
+	//m - Ã±Ã²Ã®Ã«Ã¡Ã»
+	//n - Ã±Ã²Ã°Ã®ÃªÃ¨
 
 
 
@@ -72,18 +72,19 @@ public:
 		delete data;
 	}
 
+	/*
 	Matrix operator= (Matrix& a)
 	{
 		if (failed()){ return Matrix(*this); }
 		delete data;
 		n = a.n; m = a.m;
-		data = new float [n * m];
+		data = new float[n * m];
 		for (int k = 0; k < n*m; k++)
 		{
 			data[k] = a.data[k];
 		}
 		return (*this);
-	}
+	}*/
 
 	Matrix operator+ (Matrix& a)
 	{
@@ -91,7 +92,7 @@ public:
 		if (n == a.n && m == a.m)
 		{
 			Matrix tmp = Matrix(m, n);
-			for(int i = 0; i < m; i++)
+			for (int i = 0; i < m; i++)
 			{
 				for (int j = 0; j < n; j++)
 				{
@@ -99,7 +100,8 @@ public:
 				}
 			}
 			return Matrix(tmp);
-		}else{return (*this);}
+		}
+		else{ return (*this); }
 	}
 
 	Matrix operator- (Matrix& a)
@@ -108,7 +110,7 @@ public:
 		if (n == a.n && m == a.m)
 		{
 			Matrix tmp = Matrix(m, n);
-			for(int i = 0; i < m; i++)
+			for (int i = 0; i < m; i++)
 			{
 				for (int j = 0; j < n; j++)
 				{
@@ -116,14 +118,15 @@ public:
 				}
 			}
 			return Matrix(tmp);
-		}else{return (*this);}
+		}
+		else{ return (*this); }
 	}
 
 	Matrix operator* (float& c)
 	{
 		if (failed()){ return Matrix(*this); }
 		Matrix tmp = Matrix(m, n);
-		for(int i = 0; i < m; i++)
+		for (int i = 0; i < m; i++)
 		{
 			for (int j = 0; j < n; j++)
 			{
@@ -138,20 +141,21 @@ public:
 		if (failed()){ return Matrix(*this); }
 		if (m == a.n)
 		{
-			Matrix tmp = Matrix (a.m, n);
-			for(int i = 0; i < tmp.m; i++)
+			Matrix tmp = Matrix(a.m, n);
+			for (int i = 0; i < tmp.m; i++)
 			{
-				for(int j = 0; j < tmp.n; j++)
+				for (int j = 0; j < tmp.n; j++)
 				{
 					tmp.set(i, j, 0);
-					for(int k = 0; k < this->m; k++)
+					for (int k = 0; k < this->m; k++)
 					{
 						tmp.data[j*tmp.m + i] += this->get(k, j) * a.get(i, k);
 					}
 				}
 			}
-			return Matrix (tmp);
-		}else{return (*this);}
+			return Matrix(tmp);
+		}
+		else{ return (*this); }
 	}
 
 	Matrix reverse()
@@ -178,14 +182,14 @@ public:
 				Matrix tmp1 = Matrix(n, n);
 				float det1 = this->determinant();
 				if (det1 == 0) { return Matrix(*this); }
-				for (int l = 0; l < n; l++) //ñòğîêè
+				for (int l = 0; l < n; l++) //Ã±Ã²Ã°Ã®ÃªÃ¨
 				{
-					for (int k = 0; k < n; k++) //ñòîëáöû
+					for (int k = 0; k < n; k++) //Ã±Ã²Ã®Ã«Ã¡Ã¶Ã»
 					{
 						Matrix tmp2 = Matrix((n - 1), (n - 1));
-						for (int j = 0; j < n - 1; j++) //èä¸ò ïî ñòğîêàì
+						for (int j = 0; j < n - 1; j++) //Ã¨Ã¤Â¸Ã² Ã¯Ã® Ã±Ã²Ã°Ã®ÃªÃ Ã¬
 						{
-							for (int i = 0; i < n - 1; i++) //èä¸ò ïî ñòîëáöàì
+							for (int i = 0; i < n - 1; i++) //Ã¨Ã¤Â¸Ã² Ã¯Ã® Ã±Ã²Ã®Ã«Ã¡Ã¶Ã Ã¬
 							{
 								if (j < l && i < k)
 								{
@@ -193,21 +197,21 @@ public:
 								}
 								if (j < l && i >= k)
 								{
-									tmp2.set(j, i, get(j, i+1));
+									tmp2.set(j, i, get(j, i + 1));
 								}
 								if (j >= l && i < k)
 								{
-									tmp2.set(j, i, get(j+1, i));
+									tmp2.set(j, i, get(j + 1, i));
 								}
 								if (j >= l && i >= k)
 								{
-									tmp2.set(j, i, get(j+1, i+1));
+									tmp2.set(j, i, get(j + 1, i + 1));
 								}
 							}
 
 						}
 						tmp2.print(cout); cout << tmp2.determinant() << endl;
-						tmp1.set(k, l, tmp2.determinant() * powf(-1, l + k + 1) / fabs(det1));//ıëåìåíòû ìàòğèöû àëãåáğàè÷åñêèõ äîïîëíåíèé
+						tmp1.set(k, l, tmp2.determinant() * powf(-1, l + k + 1) / fabs(det1));//Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã» Ã¬Ã Ã²Ã°Ã¨Ã¶Ã» Ã Ã«Ã£Ã¥Ã¡Ã°Ã Ã¨Ã·Ã¥Ã±ÃªÃ¨Ãµ Ã¤Ã®Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã©
 					}
 				}
 				return Matrix(tmp1.transpose());
@@ -219,12 +223,12 @@ public:
 		}
 	}
 
-	Matrix transpose ()
+	Matrix transpose()
 	{
-		Matrix tmp = Matrix (n, m);
-		for(int i = 0; i < tmp.m; i++)
+		Matrix tmp = Matrix(n, m);
+		for (int i = 0; i < tmp.m; i++)
 		{
-			for(int j = 0; j < tmp.n; j++)
+			for (int j = 0; j < tmp.n; j++)
 			{
 				tmp.set(i, j, this->get(j, i));
 			}
@@ -235,7 +239,7 @@ public:
 	float determinant()
 	{
 		if (failed()){ return 0; }
-		//ğàçëîæåíèå ïî ïîñëåäíåé ñòğîêå
+		//Ã°Ã Ã§Ã«Ã®Ã¦Ã¥Ã­Ã¨Ã¥ Ã¯Ã® Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã­Ã¥Ã© Ã±Ã²Ã°Ã®ÃªÃ¥
 		float det = 0;
 		if (n == m)
 		{
@@ -254,9 +258,9 @@ public:
 					for (int k = 0; k < n; k++)
 					{
 						Matrix tmp = Matrix((n - 1), (n - 1));
-						for (int j = 0; j < n - 1; j++) //èä¸ò ïî ñòğîêàì
+						for (int j = 0; j < n - 1; j++) //Ã¨Ã¤Â¸Ã² Ã¯Ã® Ã±Ã²Ã°Ã®ÃªÃ Ã¬
 						{
-							for (int i = 0; i < n - 1; i++) //èä¸ò ïî ñòîëáöàì
+							for (int i = 0; i < n - 1; i++) //Ã¨Ã¤Â¸Ã² Ã¯Ã® Ã±Ã²Ã®Ã«Ã¡Ã¶Ã Ã¬
 							{
 								if (j < k)
 								{
@@ -264,11 +268,11 @@ public:
 								}
 								if (j >= k)
 								{
-									tmp.set(j, i, this->get(j+1, i));
+									tmp.set(j, i, this->get(j + 1, i));
 								}
 							}
 						}
-						det += powf(-1, (n - 1 + k))*this->get(k, n-1) * tmp.determinant();
+						det += powf(-1, (n - 1 + k))*this->get(k, n - 1) * tmp.determinant();
 					}
 
 				}
@@ -302,7 +306,7 @@ public:
 
 		cout << "n: "; is >> N; n = N; cout << endl;
 		cout << "m: "; is >> M; m = M; cout << endl;
-		data = new float [n*m];
+		data = new float[n*m];
 
 		for (int i = 0; i < this->m*this->n; i++)
 		{
@@ -312,13 +316,13 @@ public:
 		return is;
 	}
 
-	void set (int i, int j, float data) { this->data[j*m + i] = data; }
+	void set(int i, int j, float data) { this->data[j*m + i] = data; }
 
-	float get (int i, int j) { return data[j*m + i]; }
+	float get(int i, int j) { return data[j*m + i]; }
 
-	int getN() {return n;}
+	int getN() { return n; }
 
-	int getM() {return m;}
+	int getM() { return m; }
 
 	bool failed()
 	{
@@ -349,12 +353,12 @@ Matrix* get_init(int n, int m)
 /*
 int main()
 {
-	Matrix a = Matrix(3, 3);
-	a.read(cin);
-	a.print(cout);
-	a = a.reverse();
-	a.print(cout);
-	system("pause");
-	return 0;
+Matrix a = Matrix(3, 3);
+a.read(cin);
+a.print(cout);
+a = a.reverse();
+a.print(cout);
+system("pause");
+return 0;
 }
 */
