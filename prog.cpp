@@ -73,7 +73,7 @@ public:
 	}
 
 	
-	Matrix& operator= (const Matrix& a)
+	Matrix operator= (const Matrix& a)
 	{
 		if (failed()){ return Matrix(*this); }
 		delete data;
