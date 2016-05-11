@@ -1,9 +1,28 @@
-In file included from cur.cpp:16:0:
-maria/prog.cpp: In member function 'Matrix& Matrix::operator=(const Matrix&)':
-maria/prog.cpp:78:37: error: invalid initialization of non-const reference of type 'Matrix&' from an rvalue of type 'Matrix'
-   if (failed()){ return Matrix(*this); }
-                                     ^
-maria/prog.cpp:86:22: error: invalid initialization of non-const reference of type 'Matrix&' from an rvalue of type 'Matrix'
-   return Matrix(*this);
-                      ^
-./check.sh: line 24: ./a.out: No such file or directory
+[==========] Running 7 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 7 tests from MatrixTest
+[ RUN      ] MatrixTest.GetNM
+n: 
+m: 
+unknown file: Failure
+C++ exception with description "std::bad_alloc" thrown in the test body.
+[  FAILED  ] MatrixTest.GetNM
+[ RUN      ] MatrixTest.Reverse
+n: 
+m: 
+unknown file: Failure
+C++ exception with description "std::bad_alloc" thrown in the test body.
+[  FAILED  ] MatrixTest.Reverse
+[ RUN      ] MatrixTest.Transpose
+n: 
+m: 
+unknown file: Failure
+C++ exception with description "std::bad_alloc" thrown in the test body.
+[  FAILED  ] MatrixTest.Transpose
+[ RUN      ] MatrixTest.SetGet
+n: 
+m: 
+unknown file: Failure
+C++ exception with description "std::bad_alloc" thrown in the test body.
+[  FAILED  ] MatrixTest.SetGet
+[ RUN      ] MatrixTest.FailedM
