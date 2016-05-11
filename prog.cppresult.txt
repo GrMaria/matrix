@@ -1,11 +1,28 @@
-cur.cpp: In member function 'virtual void MatrixTest_Reverse_Test::TestBody()':
-cur.cpp:47:7: error: no match for 'operator=' (operand types are 'Matrix' and 'Matrix')
-     c = m->reverse();
-       ^
-cur.cpp:47:7: note: candidate is:
-In file included from cur.cpp:16:0:
-maria/prog.cpp:75:9: note: Matrix Matrix::operator=(Matrix&)
-  Matrix operator= (Matrix& a)
-         ^
-maria/prog.cpp:75:9: note:   no known conversion for argument 1 from 'Matrix' to 'Matrix&'
-./check.sh: line 24: ./a.out: No such file or directory
+[==========] Running 7 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 7 tests from MatrixTest
+[ RUN      ] MatrixTest.GetNM
+n: 
+m: 
+unknown file: Failure
+C++ exception with description "std::bad_alloc" thrown in the test body.
+[  FAILED  ] MatrixTest.GetNM
+[ RUN      ] MatrixTest.Reverse
+n: 
+m: 
+unknown file: Failure
+C++ exception with description "std::bad_alloc" thrown in the test body.
+[  FAILED  ] MatrixTest.Reverse
+[ RUN      ] MatrixTest.Transpose
+n: 
+m: 
+unknown file: Failure
+C++ exception with description "std::bad_alloc" thrown in the test body.
+[  FAILED  ] MatrixTest.Transpose
+[ RUN      ] MatrixTest.SetGet
+n: 
+m: 
+unknown file: Failure
+C++ exception with description "std::bad_alloc" thrown in the test body.
+[  FAILED  ] MatrixTest.SetGet
+[ RUN      ] MatrixTest.FailedM
