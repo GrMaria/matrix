@@ -83,7 +83,7 @@ public:
 		{
 			data[k] = a.data[k];
 		}
-		return (*this);
+		return Matrix(*this);
 	}
 
 	Matrix operator+ (Matrix& a)
