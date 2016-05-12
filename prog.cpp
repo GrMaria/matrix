@@ -210,7 +210,7 @@ public:
 							}
 
 						}
-						tmp1.set(k, l, tmp2.determinant() * powf(-1, l + k + 1) / fabs(det1));//ýëåìåíòû ìàòðèöû àëãåáðàè÷åñêèõ äîïîëíåíèé
+						tmp1.set(k, l, tmp2.determinant() * powf(-1, l + k) / det1);//ýëåìåíòû ìàòðèöû àëãåáðàè÷åñêèõ äîïîëíåíèé
 					}
 				}
 				//tmp1.transpose();
