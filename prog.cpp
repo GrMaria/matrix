@@ -214,7 +214,7 @@ public:
 					}
 				}
 				//tmp1.transpose();
-				return Matrix(tmp1);
+				return Matrix(tmp1.transpose());
 			}
 		}
 		else
