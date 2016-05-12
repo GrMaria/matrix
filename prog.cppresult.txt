@@ -4,31 +4,6 @@
 [ RUN      ] MatrixTest.GetNM
 [       OK ] MatrixTest.GetNM
 [ RUN      ] MatrixTest.Reverse
-cur.cpp:38: Failure
-Value of: (int)(c.get(i,j)+0.5)
-  Actual: 0
-Expected: (int)(i == j)
-Which is: 1
-cur.cpp:38: Failure
-Value of: (int)(c.get(i,j)+0.5)
-  Actual: 0
-Expected: (int)(i == j)
-Which is: 1
-cur.cpp:38: Failure
-Value of: (int)(c.get(i,j)+0.5)
-  Actual: 0
-Expected: (int)(i == j)
-Which is: 1
-cur.cpp:38: Failure
-Value of: (int)(c.get(i,j)+0.5)
-  Actual: 0
-Expected: (int)(i == j)
-Which is: 1
-cur.cpp:38: Failure
-Value of: (int)(c.get(i,j)+0.5)
-  Actual: 0
-Expected: (int)(i == j)
-Which is: 1
 
 1 2 3 4 
 1 1 2 3 
