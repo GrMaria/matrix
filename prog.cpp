@@ -180,6 +180,7 @@ public:
 			if (n > 2)
 			{
 				Matrix tmp1 = Matrix(n, n);
+				/*
 				float det1 = this->determinant();
 				if (det1 == 0) { return Matrix(*this); }
 				for (int l = 0; l < n; l++) //ñòðîêè
@@ -212,7 +213,9 @@ public:
 						}
 						tmp1.set(k, l, tmp2.determinant() * powf(-1, l + k) / det1);//ýëåìåíòû ìàòðèöû àëãåáðàè÷åñêèõ äîïîëíåíèé
 					}
-				}
+				}*/
+				for (int i = 0; i < n*n; i++)
+				{tmp1.data[i] = i;}
 				//tmp1.transpose();
 				return Matrix(tmp1.transpose());
 			}
@@ -292,7 +295,7 @@ public:
 			o << endl;
 			for (int i = 0; i < this->m; i++)
 			{
-				o << get(i, j) << " ";
+				o << get(j, i) << " ";
 			}
 		}
 		cout << '\n' << endl;
@@ -342,7 +345,7 @@ Matrix* get_init(int n, int m)
 	Matrix* a = new Matrix(n, m);
 	return a;
 }
-/*
+
 int main()
 {
 Matrix a = Matrix(3, 3);
@@ -353,4 +356,3 @@ a.print(cout);
 system("pause");
 return 0;
 }
-*/
