@@ -31,8 +31,12 @@ public:
 	virtual bool failed();
 	*/
 
-	//m - ñòîëáûстолбыstolby
-	//n - ñòðîêèстрокиstroki
+	//m - ñòîëáû
+	// столбы
+	//stolby
+	//n - ñòðîêè
+	// строки
+	//stroki
 
 
 
