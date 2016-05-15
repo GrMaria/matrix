@@ -218,8 +218,8 @@ public:
 					}
 				}
 
-				//tmp1.transpose();
-				return Matrix(tmp1.transpose());
+				tmp1.transpose();
+				return Matrix(tmp1);
 			}
 		}
 		else
@@ -358,5 +358,4 @@ a.print(cout);
 system("pause");
 return 0;
 }
-
 */
