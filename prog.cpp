@@ -42,7 +42,7 @@ public:
 		data = new float[n*m];
 		for (int k = 0; k < n*m; k++)
 		{
-			data[k] = 1;
+			data[k] = 0;
 		}
 	}
 
@@ -52,7 +52,7 @@ public:
 		data = new float[n*m];
 		for (int k = 0; k < n*m; k++)
 		{
-			data[k] = 1;
+			data[k] = 0;
 		}
 	}
 
@@ -214,7 +214,7 @@ public:
 					}
 				}
 				//tmp1.transpose();
-				return Matrix(tmp1.transpose());
+				return Matrix(tmp1);
 			}
 		}
 		else
