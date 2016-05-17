@@ -6,57 +6,21 @@
 [ RUN      ] MatrixTest.Reverse
 
 1 2 3 4 
-1 1 2 3 
-1 1 1 2 
-1 1 1 1 
+0 1 2 3 
+0 0 1 2 
+0 0 0 1 
 
 
--1 1 -0 0 
 1 -2 1 -0 
 -0 1 -2 1 
-1 -0 1 -1 
+0 -0 1 -2 
+-0 0 -0 1 
 
 index: 0
-cur.cpp:52: Failure
-Value of: round(c.get(i,i))
-  Actual: -1
-Expected: 1
 index: 1
-cur.cpp:52: Failure
-Value of: round(c.get(i,i))
-  Actual: -2
-Expected: 1
 index: 2
-cur.cpp:52: Failure
-Value of: round(c.get(i,i))
-  Actual: -2
-Expected: 1
 index: 3
-cur.cpp:52: Failure
-Value of: round(c.get(i,i))
-  Actual: -1
-Expected: 1
-cur.cpp:55: Failure
-Value of: round(c.get(i+1,i))
-  Actual: 1
-Expected: -2
-cur.cpp:55: Failure
-Value of: round(c.get(i+1,i))
-  Actual: 1
-Expected: -2
-cur.cpp:55: Failure
-Value of: round(c.get(i+1,i))
-  Actual: 1
-Expected: -2
-cur.cpp:57: Failure
-Value of: round(c.get(i+2,i))
-  Actual: -0
-Expected: 1
-cur.cpp:57: Failure
-Value of: round(c.get(i+2,i))
-  Actual: -0
-Expected: 1
-[  FAILED  ] MatrixTest.Reverse
+[       OK ] MatrixTest.Reverse
 [ RUN      ] MatrixTest.Transpose
 [       OK ] MatrixTest.Transpose
 [ RUN      ] MatrixTest.SetGet
@@ -73,8 +37,4 @@ m:
 [       OK ] MatrixTest.Determinant
 [----------] Global test environment tear-down
 [==========] 7 tests from 1 test case ran.
-[  PASSED  ] 6 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] MatrixTest.Reverse
-
- 1 FAILED TEST
+[  PASSED  ] 7 tests.
